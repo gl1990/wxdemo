@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name></display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+        <servlet-name>weChatServlet</servlet-name>
+        <servlet-class>weChatServlet.weChatAccounts</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>weChatServlet</servlet-name>
+        <url-pattern>/weChatServlet</url-pattern> <!--url-pattern必须与servlet-name一致-->
+    </servlet-mapping>
+    
+    	<servlet>
+        <servlet-name>accessTokenServlet</servlet-name>
+        <servlet-class>accessToken.AccessTokenServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>accessTokenServlet</servlet-name>
+        <url-pattern>/accessTokenServlet</url-pattern> <!--url-pattern必须与servlet-name一致-->
+    </servlet-mapping>
+    
+    
+    <jsp-config>
+    <!-- 配置c描述文件-对应c标签，这里的taglib-uri对应jsp中引入的uri -->
+    <taglib>
+        <taglib-uri>http://www.codecoord.com</taglib-uri>
+        <taglib-location>/WEB-INF/c.tld</taglib-location>
+    </taglib>
+    <taglib>
+        <taglib-uri>http://www.codecoord.com/fn</taglib-uri>
+        <taglib-location>/WEB-INF/fn.tld</taglib-location>
+    </taglib>
+    <taglib>
+        <taglib-uri>http://www.codecoord.com/fmt</taglib-uri>
+        <taglib-location>/WEB-INF/fmt.tld</taglib-location>
+    </taglib>
+</jsp-config>  
+</web-app>
+
